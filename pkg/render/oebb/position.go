@@ -1,9 +1,8 @@
 package oebb
 
 import (
-	"github.com/joushx/traingraph/internal/pkg/idutil"
+	"github.com/joushx/traingraph/internal/pkg/renderutils"
 	"github.com/joushx/traingraph/pkg/model"
-	"github.com/joushx/traingraph/pkg/util"
 )
 
 // getYPosition calculates the position inside the graph. One has to provide
@@ -15,7 +14,7 @@ func getYPositionFromMinutes(pageStartingHour int, minutes int) float64 {
 }
 
 func getYPositionFromTime(startHours int, time string) float64 {
-	minutes := util.ParseTime(time)
+	minutes := renderutils.ParseTime(time)
 	return getYPositionFromMinutes(startHours, minutes)
 }
 
@@ -29,7 +28,7 @@ func (o *OebbStyleRenderer) getXPosition(object model.InfrastructureObject) floa
 	for _, currentObject := range o.infrastructure {
 		distanceFromStart += currentObject.Distance
 
-		if idutil.IsSameObject(currentObject.Id, object.Id) {
+		if renderutils.IsSameObject(currentObject.Id, object.Id) {
 			break
 		}
 	}

@@ -4,9 +4,8 @@ import (
 	"log"
 	"math"
 
-	"github.com/joushx/traingraph/internal/pkg/idutil"
+	"github.com/joushx/traingraph/internal/pkg/renderutils"
 	"github.com/joushx/traingraph/pkg/model"
-	"github.com/joushx/traingraph/pkg/util"
 )
 
 func (o *OebbStyleRenderer) renderJourneys(startHour int) {
@@ -60,8 +59,8 @@ func (o *OebbStyleRenderer) renderStationStopLines(journey model.Journey, startH
 
 		// lines are longer for stops
 		if infrastructureObject.Type == "stop" {
-			arrivalY = arrivalY - 0.1*util.PT_PER_CM
-			departureY = departureY + 0.1*util.PT_PER_CM
+			arrivalY = arrivalY - 0.1*renderutils.PT_PER_CM
+			departureY = departureY + 0.1*renderutils.PT_PER_CM
 		}
 
 		o.surface.MoveTo(chartMarginLeft+positionX, chartMarginTop+arrivalY)
@@ -166,7 +165,7 @@ func (o *OebbStyleRenderer) shouldDrawStationStopLine(index int, stopTime model.
 // that matches the given ID (e.g. from a StopTime of a journey)
 func (o *OebbStyleRenderer) getInfrastructureObjectForId(id model.ObjectID) (model.InfrastructureObject, bool) {
 	for _, object := range o.infrastructure {
-		if idutil.IsSameObject(object.Id, id) {
+		if renderutils.IsSameObject(object.Id, id) {
 			return object, true
 		}
 	}
@@ -198,7 +197,7 @@ func (o *OebbStyleRenderer) renderJourneyName(journey model.Journey, startHours 
 			rotation := math.Atan(1 / (sizeX / sizeY))
 
 			o.surface.SetFontSize(8)
-			o.surface.MoveTo(chartMarginLeft+positionX+0.5*util.PT_PER_CM, chartMarginTop+positionY-0.1*util.PT_PER_CM)
+			o.surface.MoveTo(chartMarginLeft+positionX+0.5*renderutils.PT_PER_CM, chartMarginTop+positionY-0.1*renderutils.PT_PER_CM)
 			o.surface.Rotate(rotation)
 			o.surface.ShowText(journey.Name)
 			o.surface.Rotate(-rotation)

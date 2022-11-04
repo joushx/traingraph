@@ -1,12 +1,12 @@
 package oebb
 
-import "github.com/joushx/traingraph/pkg/util"
+import "github.com/joushx/traingraph/internal/pkg/renderutils"
 
-const chartMarginLeft = 6.1 * util.PT_PER_CM
-const chartMarginTop = 10.7 * util.PT_PER_CM
-const chartMarginRight = 3 * util.PT_PER_CM
-const chartMarginBottom = 7.4 * util.PT_PER_CM
-const stationLineMarginTop = 5.1 * util.PT_PER_CM
+const chartMarginLeft = 6.1 * renderutils.PT_PER_CM
+const chartMarginTop = 10.7 * renderutils.PT_PER_CM
+const chartMarginRight = 3 * renderutils.PT_PER_CM
+const chartMarginBottom = 7.4 * renderutils.PT_PER_CM
+const stationLineMarginTop = 5.1 * renderutils.PT_PER_CM
 const timeIntervalSize = 10
 const chartWidth = pageWidth - (chartMarginLeft + chartMarginRight)
 const chartHeight = pageHeight - (chartMarginTop + chartMarginBottom)

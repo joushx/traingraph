@@ -4,8 +4,8 @@ import (
 	"log"
 	"math"
 
+	"github.com/joushx/traingraph/internal/pkg/renderutils"
 	"github.com/joushx/traingraph/pkg/model"
-	"github.com/joushx/traingraph/pkg/util"
 	"github.com/ungerik/go-cairo"
 	"golang.org/x/text/language"
 	"golang.org/x/text/message"
@@ -38,7 +38,7 @@ func (o *OebbStyleRenderer) renderInfrastructureObjects() {
 
 func (o *OebbStyleRenderer) renderStationLineDot(object model.InfrastructureObject) {
 	position := o.getXPosition(object)
-	o.surface.Arc(chartMarginLeft+position, 5.1*util.PT_PER_CM, 2.5, 0, math.Pi*2)
+	o.surface.Arc(chartMarginLeft+position, 5.1*renderutils.PT_PER_CM, 2.5, 0, math.Pi*2)
 	o.surface.Fill()
 }
 
@@ -47,7 +47,7 @@ func (o *OebbStyleRenderer) renderObjectLocation(object model.InfrastructureObje
 
 	o.surface.SelectFontFace("monospace", cairo.FONT_SLANT_NORMAL, cairo.FONT_WEIGHT_NORMAL)
 	o.surface.SetFontSize(7)
-	o.surface.MoveTo(chartMarginLeft+position+0.1*util.PT_PER_CM, 4.9*util.PT_PER_CM)
+	o.surface.MoveTo(chartMarginLeft+position+0.1*renderutils.PT_PER_CM, 4.9*renderutils.PT_PER_CM)
 
 	o.surface.Rotate(-0.5 * math.Pi)
 	p := message.NewPrinter(language.German)
@@ -60,11 +60,11 @@ func (o *OebbStyleRenderer) renderObjectTimeLines(object model.InfrastructureObj
 	o.surface.SetLineWidth(0.5)
 
 	o.surface.MoveTo(chartMarginLeft+position, chartMarginTop)
-	o.surface.LineTo(chartMarginLeft+position, chartMarginTop+0.2*util.PT_PER_CM)
+	o.surface.LineTo(chartMarginLeft+position, chartMarginTop+0.2*renderutils.PT_PER_CM)
 	o.surface.Stroke()
 
 	o.surface.MoveTo(chartMarginLeft+position, pageHeight-chartMarginBottom)
-	o.surface.LineTo(chartMarginLeft+position, pageHeight-chartMarginBottom-0.2*util.PT_PER_CM)
+	o.surface.LineTo(chartMarginLeft+position, pageHeight-chartMarginBottom-0.2*renderutils.PT_PER_CM)
 	o.surface.Stroke()
 }
 
@@ -105,19 +105,19 @@ func (o *OebbStyleRenderer) renderObjectName(object model.InfrastructureObject) 
 	o.surface.SetFontSize(fontSize)
 
 	// name
-	o.surface.MoveTo((chartMarginLeft+position)+fontSize/2, 9*util.PT_PER_CM)
+	o.surface.MoveTo((chartMarginLeft+position)+fontSize/2, 9*renderutils.PT_PER_CM)
 	o.surface.Rotate(-0.5 * math.Pi)
 	o.surface.ShowText(object.Name)
 	o.surface.Rotate(0.5 * math.Pi)
 
 	// DB640 abbreviation top
-	o.surface.MoveTo((chartMarginLeft+position)+fontSize/2, 10.2*util.PT_PER_CM)
+	o.surface.MoveTo((chartMarginLeft+position)+fontSize/2, 10.2*renderutils.PT_PER_CM)
 	o.surface.Rotate(-0.5 * math.Pi)
 	o.surface.ShowText(object.Id.Db640)
 	o.surface.Rotate(0.5 * math.Pi)
 
 	// DB640 abbreviation bottom
-	o.surface.MoveTo((chartMarginLeft+position)+fontSize/2, pageHeight-6*util.PT_PER_CM)
+	o.surface.MoveTo((chartMarginLeft+position)+fontSize/2, pageHeight-6*renderutils.PT_PER_CM)
 	o.surface.Rotate(-0.5 * math.Pi)
 	o.surface.ShowText(object.Id.Db640)
 	o.surface.Rotate(0.5 * math.Pi)

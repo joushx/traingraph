@@ -4,14 +4,14 @@ import (
 	"log"
 	"time"
 
+	"github.com/joushx/traingraph/internal/pkg/renderutils"
 	"github.com/joushx/traingraph/pkg/model"
-	"github.com/joushx/traingraph/pkg/util"
 	"github.com/ungerik/go-cairo"
 )
 
 // DIN A1
-const pageWidth = 84.1 * util.PT_PER_CM
-const pageHeight = 59.4 * util.PT_PER_CM
+const pageWidth = 84.1 * renderutils.PT_PER_CM
+const pageHeight = 59.4 * renderutils.PT_PER_CM
 
 type OebbStyleRenderer struct {
 	title             string

@@ -1,4 +1,4 @@
-package idutil
+package renderutils
 
 import (
 	"strings"

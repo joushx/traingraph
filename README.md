@@ -112,27 +112,13 @@ import "github.com/joushx/traingraph/pkg/util"
 
 ## Index
 
-- [Constants](<#constants>)
 - [func NewIfOpt(value string) model.Ifopt](<#func-newifopt>)
-- [func ParseTime(time string) int](<#func-parsetime>)
 
-
-## Constants
-
-```go
-const PT_PER_CM = 28.3465
-```
 
 ## func [NewIfOpt](<https://github.com/joushx/traingraph/blob/master/pkg/util/id.go#L9>)
 
 ```go
 func NewIfOpt(value string) model.Ifopt
-```
-
-## func [ParseTime](<https://github.com/joushx/traingraph/blob/master/pkg/util/time.go#L9>)
-
-```go
-func ParseTime(time string) int
 ```
 
 
