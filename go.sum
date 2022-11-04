@@ -1,0 +1,4 @@
+github.com/ungerik/go-cairo v0.0.0-20220815093914-e24bd4259cef h1:zpOobzu7pmkVFs/XNuhJvxHCdQrGWxybcfVDabi//B4=
+github.com/ungerik/go-cairo v0.0.0-20220815093914-e24bd4259cef/go.mod h1:yLTJg56omDJ+JVxZ5whpCrZgQdaSs+OBdFa+X6ViJcI=
+golang.org/x/text v0.4.0 h1:BrVqGRd7+k1DiOgtnFvAkoQEWQvBc25ouMJM6429SFg=
+golang.org/x/text v0.4.0/go.mod h1:mrYo+phRRbMaCq/xk9113O4dZlRixOauAjOtrjsXDZ8=
