@@ -5,7 +5,7 @@
 # traingraph
 
 ```go
-import "command-line-arguments"
+import "github.com/joushx/traingraph/pkg/traingraph"
 ```
 
 ## Index
@@ -38,7 +38,7 @@ func (t TrainGraph) GeneratePDF(filename string)
 # model
 
 ```go
-import "command-line-arguments"
+import "github.com/joushx/traingraph/pkg/model"
 ```
 
 ## Index
@@ -107,7 +107,7 @@ type StopTime struct {
 # util
 
 ```go
-import "command-line-arguments"
+import "github.com/joushx/traingraph/pkg/util"
 ```
 
 ## Index

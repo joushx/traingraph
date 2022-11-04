@@ -1,6 +1,0 @@
-output: "{{.Dir}}/README.md"
-embed: yes
-repository:
-  url: https://github.com/joushx/traingraph
-  defaultBranch: master
-  path: /
