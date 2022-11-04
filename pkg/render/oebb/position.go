@@ -1,6 +1,7 @@
 package oebb
 
 import (
+	"github.com/joushx/traingraph/internal/pkg/idutil"
 	"github.com/joushx/traingraph/pkg/model"
 	"github.com/joushx/traingraph/pkg/util"
 )
@@ -28,7 +29,7 @@ func (o *OebbStyleRenderer) getXPosition(object model.InfrastructureObject) floa
 	for _, currentObject := range o.infrastructure {
 		distanceFromStart += currentObject.Distance
 
-		if util.IsSameObject(currentObject.Id, object.Id) {
+		if idutil.IsSameObject(currentObject.Id, object.Id) {
 			break
 		}
 	}

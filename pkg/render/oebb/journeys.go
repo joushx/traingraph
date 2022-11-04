@@ -4,6 +4,7 @@ import (
 	"log"
 	"math"
 
+	"github.com/joushx/traingraph/internal/pkg/idutil"
 	"github.com/joushx/traingraph/pkg/model"
 	"github.com/joushx/traingraph/pkg/util"
 )
@@ -165,7 +166,7 @@ func (o *OebbStyleRenderer) shouldDrawStationStopLine(index int, stopTime model.
 // that matches the given ID (e.g. from a StopTime of a journey)
 func (o *OebbStyleRenderer) getInfrastructureObjectForId(id model.ObjectID) (model.InfrastructureObject, bool) {
 	for _, object := range o.infrastructure {
-		if util.IsSameObject(object.Id, id) {
+		if idutil.IsSameObject(object.Id, id) {
 			return object, true
 		}
 	}
